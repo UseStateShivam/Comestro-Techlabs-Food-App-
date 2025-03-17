@@ -1,9 +1,11 @@
-import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import FoodCard from '../components/Home/FoodCard';
+import PopularPizzaCard from '../components/Home/PopularPizzaCard';
+import SpecialOfferCard from '../components/Home/SpecialOfferCard';
 
 const Index = () => {
   return (
-    <View className="flex-1 bg-white px-4 pt-6">
+    <ScrollView className="flex-1 bg-white px-4 pt-6" contentContainerStyle={{ flexGrow: 1 }}>
       {/* Header */}
       <View className="flex-row items-center justify-between mb-4">
         <TouchableOpacity className="p-2">
@@ -27,23 +29,33 @@ const Index = () => {
           <View className="w-5 h-5 bg-gray-500 rounded" />
         </TouchableOpacity>
       </View>
-
-      {/* Categories */}
-      <View className="flex-row justify-between mb-4">
-        {["Food", "Grocery", "Pharmacy"].map((category, index) => (
-          <TouchableOpacity key={index} className="items-center">
-            <View className="w-16 h-16 bg-gray-700 rounded-lg mb-2" />
-            <Text className="text-sm">{category}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-
-      <FoodCard />
-      <FoodCard />
-      <FoodCard />
-      <FoodCard />
-      <FoodCard />
-    </View>
+      <SpecialOfferCard/>    
+      <PopularPizzaCard />
+      <FoodCard
+        Title='Pepperoni Pizza'
+        Cost='10.00'
+        Rating='4.5'
+        Time='20min'
+      />
+      <FoodCard
+        Title='Margherita Pizza'
+        Cost='8.00'
+        Rating='4.6'
+        Time='30min'
+      />
+      <FoodCard
+        Title='Shahi Paneer'
+        Cost='12.00'
+        Rating='4.1'
+        Time='25min'
+      />
+      <FoodCard
+        Title='Veg Farmhouse'
+        Cost='13.00'
+        Rating='4.2'
+        Time='20min'
+      />
+    </ScrollView>
   );
 };
 
