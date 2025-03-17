@@ -1,4 +1,5 @@
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import FoodCard from '../components/Home/FoodCard';
 
 const Index = () => {
   return (
@@ -8,7 +9,7 @@ const Index = () => {
         <TouchableOpacity className="p-2">
           <View className="w-6 h-6 bg-gray-700 rounded" />
         </TouchableOpacity>
-        <Text className="text-lg font-semibold">Ontario, Canada ▼</Text>
+        <Text className="text-lg font-semibold">Ontario, Ohio ▼</Text>
         <TouchableOpacity className="p-2">
           <View className="w-6 h-6 bg-gray-700 rounded-full" />
         </TouchableOpacity>
@@ -37,28 +38,11 @@ const Index = () => {
         ))}
       </View>
 
-      {/* Deal of the Day */}
-      <View className="bg-gray-100 rounded-lg p-3 flex-row items-center mb-4">
-        <View className="w-6 h-6 bg-gray-700 rounded-full mr-2" />
-        <Text className="text-sm font-semibold">Deal Of The Day & Other Great Offers</Text>
-      </View>
-
-      {/* Promo Card */}
-      <View className="bg-gray-700 rounded-lg p-4 mb-4">
-        <View className="w-full h-20 bg-gray-600 rounded-lg mb-2" />
-        <Text className="text-white text-lg font-semibold">Any Order Of Medicines</Text>
-        <Text className="text-gray-300">Best food delivered at your door in <Text className="text-yellow-400">20 min</Text></Text>
-      </View>
-
-      {/* Bottom Navigation */}
-      <View className="absolute bottom-0 left-0 right-0 bg-white py-3 px-4 flex-row justify-between border-t border-gray-300">
-        {["Zomo", "Food", "Grocery", "Pharmacy", "Profile"].map((item, index) => (
-          <TouchableOpacity key={index} className="items-center">
-            <View className="w-6 h-6 bg-gray-700 rounded-full mb-1" />
-            <Text className="text-xs">{item}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
+      <FoodCard />
+      <FoodCard />
+      <FoodCard />
+      <FoodCard />
+      <FoodCard />
     </View>
   );
 };
